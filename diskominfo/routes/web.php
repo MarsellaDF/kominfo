@@ -32,9 +32,12 @@ Route::resource('login',App\Http\Controllers\LoginController::class);
 Route::resource('ppid',App\Http\Controllers\PPIDController::class);
 Route::resource('prokeg',App\Http\Controllers\ProkegController::class);
 Route::resource('tentang',App\Http\Controllers\TentangController::class);
+Route::resource('kas',App\Http\Controllers\KasController::class);
 Route::resource('realisasi',App\Http\Controllers\RealisasiController::class);
 Route::resource('keuangan',App\Http\Controllers\KeuanganController::class);
 Route::resource('aset',App\Http\Controllers\AsetController::class);
+Route::resource('anggaran',App\Http\Controllers\AnggaranController::class);
+Route::resource('neraca',App\Http\Controllers\NeracaController::class);
 Route::resource('rekrutmen',App\Http\Controllers\RekrutmenController::class);
 Route::resource('produkhukum',App\Http\Controllers\ProdukhukumController::class);
 Route::resource('pengaduan',App\Http\Controllers\PengaduanController::class);
@@ -74,7 +77,9 @@ Route::resource('adminpengaduan-admin',App\Http\Controllers\AdminPengaduanContro
 Route::resource('adminbarangjasa-admin',App\Http\Controllers\AdminBarangjasaController::class);
 Route::resource('adminevakuasi-admin',App\Http\Controllers\AdminEvakuasiController::class);
 Route::resource('adminmaklumat-admin',App\Http\Controllers\AdminMaklumatController::class);
-
+Route::resource('adminanggaran-admin',App\Http\Controllers\AdminAnggaranController::class);
+Route::resource('adminneraca-admin',App\Http\Controllers\AdminNeracaController::class);
+Route::resource('adminkas-admin',App\Http\Controllers\AdminKasController::class);
 
 Auth::routes();
 
