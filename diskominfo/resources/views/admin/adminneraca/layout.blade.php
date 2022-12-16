@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row" style="padding: 16px; background-color:rgb(213, 228, 247)">
             <div class="col">
-                <h4><a href="/admin">Dashboard</a> / <a style="color: grey">Laporan Realisasi Anggaran</a>
+                <h4><a href="/admin">Dashboard</a> / <a style="color: grey">Laporan Realisasi neraca</a>
                 </h4>
             </div>
             <div class="col text-right">
-                <a href="{{ URL::to('/adminanggaran-admin/create') }}">++ Tambah Data</a>
+                <a href="{{ URL::to('/adminneraca-admin/create') }}">++ Tambah Data</a>
             </div>
         </div>
         {{--  <div class="main-title" style="display:inline-flex">

@@ -1,4 +1,4 @@
-@extends('admin.adminanggaran.layout')
+@extends('admin.adminkas.layout')
 
 @section('content')
     <table class="table table-striped table-bordered table-hover" id="table">
@@ -11,12 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($admin_anggarans as $data)
+            @forelse ($admin_kas as $data)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>
-                        @if ($data['filename_admin_anggarans'] != null || $data['filename_admin_anggarans'] != '')
-                            <img src="/upload/adminanggaran/{{ $data->filename_admin_anggarans }}" width="300">
+                        @if ($data['filename_admin_kas'] != null || $data['filename_admin_kas'] != '')
+                            <img src="/upload/adminkas/{{ $data->filename_admin_kas }}" width="300">
                         @else
                             <span style="color: red">Tidak ada gambar</span>
                         @endif
@@ -30,8 +30,8 @@
                     </td>
                     <td class="text-center">
                         <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                            action="{{ route('adminanggaran-admin.destroy', $data->id) }}" method="POST">
-                            <a href="{{ route('adminanggaran-admin.edit', $data->id) }}"
+                            action="{{ route('adminkas-admin.destroy', $data->id) }}" method="POST">
+                            <a href="{{ route('adminkas-admin.edit', $data->id) }}"
                                 class="btn btn-warning">EDIT</a>
                             @csrf
                             @method('DELETE')
