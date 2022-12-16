@@ -41,6 +41,8 @@ Route::resource('pengaduan',App\Http\Controllers\PengaduanController::class);
 Route::resource('barangjasa',App\Http\Controllers\BarangjasaController::class);
 Route::resource('login_pengguna',App\Http\Controllers\LoginPenggunaController::class);
 Route::resource("register-pengguna", App\Http\Controllers\RegisterPenggunaController::class);
+Route::resource("evakuasi", App\Http\Controllers\EvakuasiController::class);
+Route::resource("maklumat", App\Http\Controllers\MaklumatController::class);
 Route::resource('admin',App\Http\Controllers\AdminController::class)->middleware('auth');
 Route::resource('pengguna',App\Http\Controllers\PenggunaController::class)->middleware('auth');
 
@@ -70,6 +72,9 @@ Route::resource('adminrekrutmen-admin',App\Http\Controllers\AdminRekrutmenContro
 Route::resource('adminprodukhukum-admin',App\Http\Controllers\AdminProdukhukumController::class);
 Route::resource('adminpengaduan-admin',App\Http\Controllers\AdminPengaduanController::class);
 Route::resource('adminbarangjasa-admin',App\Http\Controllers\AdminBarangjasaController::class);
+Route::resource('adminevakuasi-admin',App\Http\Controllers\AdminEvakuasiController::class);
+Route::resource('adminmaklumat-admin',App\Http\Controllers\AdminMaklumatController::class);
+
 
 Auth::routes();
 
