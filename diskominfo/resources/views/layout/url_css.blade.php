@@ -7,7 +7,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="/assets/template/img/logo.png" rel="icon">
+    <link href="/assets/template/img/logo.png" style="object-fit: cover;" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -19,7 +19,7 @@
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
                     <small class="far fa-clock text-primary me-2"></small>
-                    <small>Senin - Jum'at : 08.00 WIB - 15.00 WIB</small>
+                    <small>Senin - Jum at : 08.00 WIB - 15.00 WIB</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
@@ -48,24 +48,34 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
         <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="/assets/template/img/logo.png" width="40" height="40">
+            <img src="/assets/template/img/logo.png" style="object-fit: contain;" width="40" height="40">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link active">Beranda</a>
+                <a href="/" class="nav-item nav-link {{ Request::segment(1) != '' ? '' : 'active' }}" >Beranda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profil</a>
+                    <a href="#" class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'tentang'
+                    || Request::segment(1) == 'pejabat'
+                    || Request::segment(1) == 'tatakerja'
+                        ? 'active'
+                        : '' }}" data-bs-toggle="dropdown">Profil</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="/tentang" class="dropdown-item">Tentang</a>
+                        <a href="/tentang" class="dropdown-item ">Tentang</a>
                         <a href="/pejabat" class="dropdown-item">Pejabat Struktural</a>
                         <a href="/tatakerja" class="dropdown-item">Tata Kerja</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kinerja</a>
+                    <a href="#" class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'prokeg'
+                    || Request::segment(1) == 'realisasi'
+                    || Request::segment(1) == 'anggaran'
+                        ? 'active'
+                        : '' }}" data-bs-toggle="dropdown">Kinerja</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/prokeg" class="dropdown-item">Program & Kegiatan</a>
                         <a href="/realisasi" class="dropdown-item">Realisasi Kegiatan</a>

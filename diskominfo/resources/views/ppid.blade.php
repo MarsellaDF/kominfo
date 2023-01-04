@@ -6,10 +6,13 @@
 
 <div class="container-fluid header bg-primary p-0 mb-5">
     <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
-        <div class="col-lg-8 p-5 wow fadeOut" data-wow-delay="0.1s">
-            <h1 class="display-6 text-white mb-5">PPID Dinas Komunikasi Informatika dan Pesandian Kab Banyuwangi</h1>
-            <a href="/login_pengguna" class="btn btn-outline-light py-md-3 px-md-2 animated slideInRight">Pengajuan Permohonan Online >>>></a>
-        </div>
+        <center>
+            <div class="col-lg-12 p-5 wow fadeOut" data-wow-delay="0.1s">
+                <h1 class="display-6 text-white mb-5" style="font-size: 60px">PPID</h1>
+                <h1 class="display-6 text-white mb-5">Dinas Komunikasi Informatika dan Pesandian Kab Banyuwangi</h1>
+                <a href="/login_pengguna"  class="btn btn-outline-light py-md-3 px-md-2 animated slideInRight">Pengajuan Permohonan Online >>>></a>
+            </div>
+        </center>
     </div>
 </div>
 
