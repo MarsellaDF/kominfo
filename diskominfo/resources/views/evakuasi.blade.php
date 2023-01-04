@@ -6,7 +6,7 @@
 
     <div class="container-xxl py-5">
         <div class="text-center mx-auto mb-5">
-            <h3>PROSEDUR EVAKUASI DARURAT</h3>
+            <h3>Prosedur Evakuasi Darurat</h3>
             @foreach ($adminEvakuasi as $data)
         <div class="owl-carousel-item position-relative">
             <img class="img-fluid" src="/upload/adminevakuasi/{{ $data->filename_admin_evakuasis }}">

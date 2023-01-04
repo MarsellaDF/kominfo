@@ -1,29 +1,42 @@
-@extends('admin.adminberkala.layout')
+@extends('admin.adminpejabat.layout')
 
 @section('content')
     <table class="table table-striped table-bordered table-hover" id="table">
         <thead>
             <tr class="users-table-info">
                 <th>No</th>
-                <th>Judul Informasi</th>
-                <th>Jenis Media Yang Memuat Informasi</th>
-                <th>Status</th>
-                <th>Aksi</th>
+                    <th>Jabatan</th>
+                    <th>Nama</th>
+                    <th>NIP</th>
+                    <th>Pangkat/Golongan Ruang</th>
+                    <th>Pendidikan Terakhir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Status Perkawinan</th>
+                    <th>LHKPN</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($adminBerkala as $data)
+            @forelse ($adminPejabat as $data)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-
-                    <td>{{ $data->title }}</td>
-                    <td>
-                        @if ($data['url'] != null || $data['url'] != '')
-                        <a href={{ $data->url }} target="_blank" class="btn btn-link">Lihat Disini</a>
-                        @else
-                            <span style="color: red">Tidak ada URL</span>
-                        @endif
-                    </td>
+                    <td>{{ $data->jabatan }}</td>
+                    <td>{{ $data->nama }}</td>
+                    <td>{{ $data->nip }}</td>
+                    <td>{{ $data->pangkat }}</td>
+                    <td>{{ $data->pendidikan }}</td>
+                    <td>{{ $data->kelamin }}</td>
+                    <td>{{ $data->agama }}</td>
+                    <td>{{ $data->kawin }}</td>
+                        <td>
+                            @if ($data['lhkpn'] != null || $data['lhkpn'] != '')
+                            <a href={{ $data->lhkpn }} target="_blank" class="btn btn-link">Lihat Disini</a>
+                            @else
+                                <span style="color: red">Tidak ada LHKPN</span>
+                            @endif
+                                </td>
                     <td>
                         @if ($data->status == true)
                             <div class="badge badge-success">Aktif</div>
@@ -33,8 +46,8 @@
                     </td>
                     <td class="text-center">
                         <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                            action="{{ route('adminberkala-admin.destroy', $data->id) }}" method="POST">
-                            <a href="{{ route('adminberkala-admin.edit', $data->id) }}"
+                            action="{{ route('adminpejabat-admin.destroy', $data->id) }}" method="POST">
+                            <a href="{{ route('adminpejabat-admin.edit', $data->id) }}"
                                 class="btn btn-warning">EDIT</a>
                             @csrf
                             @method('DELETE')
@@ -44,7 +57,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td class="text-center text-mute" colspan="5">Maaf!, Data tidak tersedia.</td>
+                    <td class="text-center text-mute" colspan="10">Maaf!, Data tidak tersedia.</td>
                 </tr>
             @endforelse
         </tbody>

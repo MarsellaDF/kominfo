@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Banner;
 use App\Models\Library;
-use App\Models\Keanggotaan;
 use Illuminate\Http\Request;
 
 class PPIDController extends Controller
@@ -14,10 +12,6 @@ class PPIDController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
@@ -26,9 +20,7 @@ class PPIDController extends Controller
      */
     public function index()
     {
-        $data['banners'] = Banner::where('status', true)->orderByDesc('id')->get();
         $data['latarBelakang'] =  Library::where("title", "Latar Belakang")->first();
-        $data['keanggotaans'] = Keanggotaan::where('status', true)->orderByDesc('id')->get();
-        return view('beranda', $data);
+        return view('ppid', $data);
     }
 }

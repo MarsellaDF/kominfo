@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
-use App\Models\Library;
-use App\Models\Keanggotaan;
+use App\Models\TujuanSasaran;
+use App\Models\Kedudukan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,10 +14,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
@@ -27,8 +23,8 @@ class HomeController extends Controller
     public function index()
     {
         $data['banners'] = Banner::where('status', true)->orderByDesc('id')->get();
-        $data['latarBelakang'] =  Library::where("title", "Latar Belakang")->first();
-        $data['keanggotaans'] = Keanggotaan::where('status', true)->orderByDesc('id')->get();
+        $data['tujuanSasaran'] =  TujuanSasaran::where("title", "Tujuan Sasaran")->first();
+        $data['kedudukan'] =  Kedudukan::where("title", "Kedudukan")->first();
         return view('beranda', $data);
     }
 }

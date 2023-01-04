@@ -34,10 +34,10 @@
                             <a href="/banner-admin">Banner</a>
                         </li>
                         <li>
-                            <a href="/library-admin">Library</a>
+                            <a href="/tujuansasaran-admin">Tujuan dan Sasaran</a>
                         </li>
                         <li>
-                            <a href="/keanggotaan-admin">Keanggotaan</a>
+                            <a href="/kedudukan-admin">Kedudukan Tugas Fungsi</a>
                         </li>
                     </ul>
                 </li>
@@ -52,6 +52,9 @@
                     <ul class="cat-sub-menu">
                         <li>
                             <a href="/admintentang-admin">Tentang</a>
+                        </li>
+                        <li>
+                            <a href="/keanggotaan-admin">Keanggotaan</a>
                         </li>
                         <li>
                             <a href="/adminpejabat-admin">Pejabat Struktural</a>
@@ -148,6 +151,9 @@
                     <ul class="cat-sub-menu">
                         <li>
                             <a href="/adminppid-admin">Tentang PPID</a>
+                        </li>
+                        <li>
+                            <a href="/library-admin">Library</a>
                         </li>
                         <li>
                             <a href="/adminmaklumat-admin">Maklumat Pelayanan</a>

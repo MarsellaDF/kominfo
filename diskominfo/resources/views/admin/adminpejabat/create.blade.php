@@ -1,7 +1,7 @@
 @extends('admin.adminpejabat.layout')
 
 @section('content')
-    <h2>Form Tambah Data Pejabat Struktural</h2>
+    <h2>Form Tambah Data Pejabat Struktural dan LHKPN</h2>
     <div class="container" style="padding: 24px; background-color:white">
         <form method="post" action="{{ url('adminpejabat-admin')}}" enctype="multipart/form-data">
             @csrf
@@ -54,6 +54,12 @@
                             <label class="font-weight-bold">Status Perkawinan</label>
                              <input type="text" name="kawin" class="form-control" placeholder="Inputkan Status Perkawinan"/>
                                    </div>
+                    <div class="col-lg-6">
+                            <div class="form-group">
+                           <label class="font-weight-bold">LHKPN</label>
+                            <input type="link" name="lhkpn" class="form-control" placeholder="Inputkan LHKPN"/>
+                                  </div>
+                    </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">

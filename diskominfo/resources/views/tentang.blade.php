@@ -28,6 +28,15 @@
             </div>
             @endif
     </div>
+
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h1>Struktur Organisasi</h1> <br>
+        @foreach ($keanggotaans as $data)
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="/upload/keanggotaan/{{ $data->filename_keanggotaans }}">
+        </div>
+        @endforeach
+    </div>
 </div>
 </div>
     @stop

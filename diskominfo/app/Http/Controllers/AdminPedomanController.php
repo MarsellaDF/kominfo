@@ -15,7 +15,7 @@ class AdminPedomanController extends Controller
      */
     public function index()
     {
-        $data['adminPedoman'] = AdminPedoman::all();
+        $data['adminPedoman'] = AdminPedoman::orderByDesc('id')->get();
         return view("admin.adminpedoman.index", $data);
     }
 
@@ -26,7 +26,7 @@ class AdminPedomanController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.adminpedoman.create");
     }
 
     /**
@@ -37,7 +37,40 @@ class AdminPedomanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'image' => 'mimes:doc,docx,xlsx,pptx,pdf|required'
+        ]);
+
+        $reqImage = $request->image;
+        if ($request->hasFile('image')) {
+            $name = time().rand(1,100).'.'.$reqImage->extension();
+            $reqImage->move(public_path().'/upload/adminpedoman/', $name);
+            $imageurl = $name;
+        }
+
+        $dtadminPedoman = [
+            'title' => $request->title,
+            'image' => $imageurl,
+            'status' => $request->status,
+            'created_at' => now(),
+        ];
+
+        $save = DB::table('admin_pedomen')->insert($dtadminPedoman);
+
+        if ($save) {
+            return redirect('/adminpedoman-admin')
+                ->with([
+                    'success' => 'Data Berhasil Ditambah',
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Data Gagal Ditambah!',
+                ]);
+        }
     }
 
     /**
@@ -46,7 +79,7 @@ class AdminPedomanController extends Controller
      * @param  \App\Models\AdminPedoman  $adminpedoman
      * @return \Illuminate\Http\Response
      */
-    public function show(AdminPedoman $adminPedoman)
+    public function show(AdminPedoman $adminpedoman)
     {
         //
     }
@@ -72,28 +105,24 @@ class AdminPedomanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $adminPedoman = AdminPedoman::where('id',$id)->first();
-        if($adminPedoman->file != null){
-            $imageurl = $adminPedoman->file;
-        } else {
-            $imageurl = null;
-        }
+        $dtadminPedoman = AdminPedoman::where('id',$id)->first();
+        $imageurl = $dtadminPedoman->image;
 
-        if ($request->hasFile('file')) {
-            $reqImage = $request->file;
+        if ($request->hasFile('image')) {
+            $reqImage = $request->image;
             $name = time().rand(1,100).'.'.$reqImage->extension();
             $reqImage->move(public_path().'/upload/adminpedoman/', $name);
             $imageurl = $name;
 
-            $file = 'upload/adminpedoman/' . $adminPedoman->file;
-            if ($adminPedoman->file != '' && $adminPedoman->file != null) {
+            $file = 'upload/adminpedoman/' . $dtadminPedoman->image;
+            if ($dtadminPedoman->image != '' && $dtadminPedoman->image != null) {
                 unlink($file);
             }
         }
 
         $changeadminPedoman = [
-            'content' => $request->content,
-            'file' => $imageurl,
+            'title' => $request->title,
+            'image' => $imageurl,
             'status' => $request->status,
             'updated_at' => now(),
         ];
@@ -102,7 +131,7 @@ class AdminPedomanController extends Controller
         ->where('id', $id)
         ->update($changeadminPedoman);
 
-        if ($data) {
+        if ($changeadminPedoman) {
             return redirect('/adminpedoman-admin')
                 ->with([
                     'success' => 'Data Berhasil Diperbarui',
@@ -123,8 +152,38 @@ class AdminPedomanController extends Controller
      * @param  \App\Models\AdminPedoman  $adminpedoman
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AdminPedoman $adminPedoman)
+    public function destroy($id)
     {
-        //
+        $adminPedoman = AdminPedoman::where('id',$id)->first();
+
+        if (empty($adminPedoman)) {
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with([
+                'error' => 'data tidak ditemukan!',
+            ]);
+        }
+
+        $file = 'upload/adminpedoman/' . $adminPedoman->image;
+        if ($adminPedoman->image != '' && $adminPedoman->image != null) {
+            unlink($file);
+        }
+
+        $data = AdminPedoman::where('id',$id)->delete();
+
+        if ($adminPedoman) {
+            return redirect('/adminpedoman-admin')
+                ->with([
+                    'success' => 'Data Berhasil Dihapus',
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Data Gagal Dihapus!',
+                ]);
+        }
     }
 }

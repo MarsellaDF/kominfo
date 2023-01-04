@@ -6,13 +6,13 @@
 
 <div class="container-xxl py-5">
     <div class="text-center mx-auto mb-5">
-        <h3>LAPORAN INFORMASI</h3><br>
+        <h3>Laporan Layanan Informasi Publik</h3><br>
         <table class="table table-striped table-bordered table-hover" id="table">
             <thead>
                 <tr class="users-table-info">
                     <th>No</th>
-                    <th>Perihal</th>
-                    <th>Lihat Perihal</th>
+                    <th>Uraian</th>
+                    <th>Link</th>
                 </tr>
             </thead>
         <tbody>

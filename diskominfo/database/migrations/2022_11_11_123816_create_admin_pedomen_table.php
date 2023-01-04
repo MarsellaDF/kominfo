@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('admin_pedomen', function (Blueprint $table) {
             $table->id();
-            $table->text("title");
-            $table->text("content")->nullable();
-            $table->string("file")->nullable();
+            $table->string("title");
+            $table->string("image");
             $table->boolean("status");
             $table->timestamps();
         });

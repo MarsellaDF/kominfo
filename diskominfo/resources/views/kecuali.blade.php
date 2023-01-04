@@ -6,7 +6,7 @@
 
 <div class="container-xxl py-5">
     <div class="text-center mx-auto mb-5">
-        <h3>DAFTAR INFORMASI DIKECUALIKAN</h3><br>
+        <h3>Daftar Informasi Dikecualikan</h3><br>
         <table class="table table-striped table-bordered table-hover" id="table">
             <thead>
                 <tr class="users-table-info">

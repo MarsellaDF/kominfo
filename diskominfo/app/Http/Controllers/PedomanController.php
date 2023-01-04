@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminPedoman;
 
+
 class PedomanController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class PedomanController extends Controller
      */
     public function index()
     {
-        return view('pedoman');
+        $data['adminPedoman'] = AdminPedoman::where('status', true)->orderByDesc('id')->get();
+        return view('pedoman', $data);
     }
 
     /**

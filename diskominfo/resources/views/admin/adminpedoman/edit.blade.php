@@ -1,25 +1,20 @@
 @extends('admin.adminpedoman.layout')
 
 @section('content')
-    <h2>Form Edit Pedoman</h2>
+    <h2>Form Edit Organisasi dan Tata Kerja</h2>
     <div class="container" style="padding: 24px; background-color:white">
         <form method="post" action="{{ route('adminpedoman-admin.update', $adminPedoman->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="modal-body">
-                <div class="row">
-                    <label for="deskripsi" class="form-label">Konten : <span
-                        style="font-size: 12px; color:red;">*</span></label><br>
-                </div>
-                <div class="row-lg-12">
-                    <textarea id="konten" class="form-control" name="content" rows="10" cols="200">
-                        {{ $adminPedoman->content }}
-                    </textarea>
-                </div>
                 <div class="row g-2">
                     <div class="col mb-0">
-                        <label for="file" class="form-label">Image</label>
-                        <input type='file' name="file" id="imgInp" class="form-control" />
+                        <label class="font-weight-bold">Organisasi dan Tata Kerja</label>
+                        <input type="text" name="title" value="{{ $adminPedoman->title }}" class="form-control" placeholder="Inputkan Organisasi dan Tata Kerja"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label for="image" class="form-label">File Organisasi dan Tata Kerja</label>
+                        <input type='file' name="image" id="imgInp" class="form-control" />
                     </div>
                     <div class="col mb-0">
                         <div class="form-check mt-3">
@@ -31,20 +26,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-2" style="margin-top: 16px">
-                    <div class="col mb-0">
-                        @if (isset($adminPedoman->file))
-                            <img width="200px" id="blah" src="{{ '/upload/adminpedoman/' . $adminPedoman->file }}"
-                                alt="your image" />
-                        @else
-                            <span style="color: red">Tidak ada gambar</span>
-                        @endif
-
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
-                <a href="/adminPedoman-admin" class="btn btn-outline-secondary">Close</a>
+                <a href="/adminpedoman-admin" class="btn btn-outline-secondary">Close</a>
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </form>
