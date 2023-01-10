@@ -19,7 +19,7 @@
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
                     <small class="far fa-clock text-primary me-2"></small>
-                    <small>Senin - Jum at : 08.00 WIB - 15.00 WIB</small>
+                    <small>Senin - Jum at : 07.00 WIB - 15.30 WIB</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">

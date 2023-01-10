@@ -57,7 +57,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td class="text-center text-mute" colspan="10">Maaf!, Data tidak tersedia.</td>
+                    <td class="text-center text-mute" colspan="12">Maaf!, Data tidak tersedia.</td>
                 </tr>
             @endforelse
         </tbody>
