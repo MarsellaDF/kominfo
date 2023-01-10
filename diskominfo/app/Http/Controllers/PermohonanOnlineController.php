@@ -31,11 +31,11 @@ class PermohonanOnlineController extends Controller
         //melakukan validasi
         $rules = [
             'nik' => 'required|numeric',
-            'nama' => 'required',
-            'alamat' => 'required',
+            'name' => 'required',
+            'address' => 'required',
             'email' => 'required',
-            'pekerjaan' => 'required',
-            'nomor' => 'required|numeric',
+            'jobs' => 'required',
+            'telepon' => 'required|numeric',
             'informasi' => 'required',
             'alasan_tujuan' => 'required',
             'cara' => 'required',
@@ -44,11 +44,11 @@ class PermohonanOnlineController extends Controller
 
         $message = [
             'nik.required'        => 'isi terlebih dahulu.',
-            'nama.required'         => 'isi terlebih dahulu.',
-            'alamat.required'     => 'isi terlebih dahulu.',
+            'name.required'         => 'isi terlebih dahulu.',
+            'address.required'     => 'isi terlebih dahulu.',
             'email.required'          => 'isi terlebih dahulu.',
-            'pekerjaan.required'      => 'isi terlebih dahulu.',
-            'nomor.required'      => 'isi terlebih dahulu.',
+            'jobs.required'      => 'isi terlebih dahulu.',
+            'telepon.required'      => 'isi terlebih dahulu.',
             'informasi.required'      => 'isi terlebih dahulu.',
             'alasan_tujuan.required'      => 'isi terlebih dahulu.',
             'cara.required'      => 'isi terlebih dahulu.',
@@ -63,20 +63,31 @@ class PermohonanOnlineController extends Controller
             return redirect()->back()->withErrors($validator)->withInput($request->all());
         }
 
-        PermohonanOnlineModel::create([
+        $imageurl = null;
+        $reqImage = $request->ktp;
+        if ($request->hasFile('ktp')) {
+            $name = time().rand(1,100).'.'.$reqImage->extension();
+            $reqImage->move(public_path().'/upload/permohonan-online/ktp/', $name);
+            $imageurl = $name;
+        }
+
+        $body = [
             'nik' => $request->input('nik'),
-            'nama' => $request->input('nama'),
-            'alamat' => $request->input('alamat'),
+            'nama' => $request->input('name'),
+            'alamat' => $request->input('address'),
             'email' => $request->input('email'),
-            'pekerjaan' => $request->input('pekerjaan'),
-            'nomor' => $request->input('nomor'),
+            'pekerjaan' => $request->input('jobs'),
+            'nomor' => $request->input('telepon'),
             'informasi' => $request->input('informasi'),
             'alasan_tujuan' => $request->input('alasan_tujuan'),
             'cara' => $request->input('cara'),
-            'ktp' => $request->input('ktp'),
-        ]);
+            'ktp' => $imageurl,
+        ];
 
-        return redirect()->route('permohonan_online.index')
-            ->with('success', 'Permohonan Online berhasil dikirim!');
+        PermohonanOnlineModel::create($body);
+        return redirect('/')
+        ->with([
+            'success' => 'Permohonan Online berhasil dikirim!',
+        ]);
     }
 }
