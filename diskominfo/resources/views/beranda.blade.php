@@ -7,7 +7,7 @@
 <div class="container-fluid header bg-primary p-0 mb-5">
     <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
         <div class="col-lg-6 p-5 wow fadeOut" data-wow-delay="0.1s">
-            <h2 class="display-6 text-white mb-3">DINAS KOMUNIKASI INFORMATIKA DAN PERSANDIAN KAB BANYUWANGI</h2>
+            <h2 class="display-6 text-white mb-3">DINAS KOMUNIKASI, INFORMATIKA DAN PERSANDIAN KABUPATEN BANYUWANGI</h2>
         </div>
 
 <div class="col-lg-6 wow fadeOut" data-wow-delay="0.5s">
