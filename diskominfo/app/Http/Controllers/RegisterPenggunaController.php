@@ -106,7 +106,6 @@ class RegisterPenggunaController extends Controller
             'status' => false,
             'created_at' => now(),
         ]);
-
         return view("permohonan_online.index", $data);
     }
 }

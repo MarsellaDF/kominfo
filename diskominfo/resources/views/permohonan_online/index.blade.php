@@ -48,7 +48,7 @@
                                             Kependudukan</label>
                                         <input name="nik" type="text" class="form-control" maxlength="16"
                                             data-minlength="16" id="exampleFormControlInput1"
-                                            placeholder="35**************" value="{{ $dataPengguna->nik }}">
+                                            placeholder="35**************" value="">
                                         @error('nik')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror
@@ -57,7 +57,7 @@
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Nama Lengkap</label>
                                         <input name="name" type="text" class="form-control"
-                                            value="{{ $dataUser->name }}" id="exampleFormControlInput1"
+                                            value="" id="exampleFormControlInput1"
                                             placeholder="Nama Lengkap Anda">
                                         @error('nama')
                                         <div class="text-danger">* {{ $message }}</div>
@@ -67,7 +67,7 @@
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Alamat Lengkap</label>
                                         <input name="address" type="text" class="form-control"
-                                            value="{{ $dataPengguna->address }}" id="exampleFormControlInput1"
+                                            value="" id="exampleFormControlInput1"
                                             placeholder="Isikan Alamat Lengkap Anda">
                                         @error('alamat')
                                         <div class="text-danger">* {{ $message }}</div>
@@ -77,7 +77,7 @@
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Email</label>
                                         <input name="email" type="text" class="form-control"
-                                            value="{{ $dataPengguna->email }}" id="exampleFormControlInput1"
+                                            value="" id="exampleFormControlInput1"
                                             placeholder="Isikan Email Anda">
                                         @error('email')
                                         <div class="text-danger">* {{ $message }}</div>
@@ -87,7 +87,7 @@
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Pekerjaan</label>
                                         <input name="jobs" type="text" class="form-control"
-                                            value="{{ $dataPengguna->jobs }}" id="exampleFormControlInput1"
+                                            value="" id="exampleFormControlInput1"
                                             placeholder="Isikan Pekerjaan Anda">
                                         @error('pekerjaan')
                                         <div class="text-danger">* {{ $message }}</div>
@@ -99,7 +99,7 @@
                                             Telepon/WhatsApp</label>
                                         <input name="telepon" type="text" class="form-control" maxlength="13"
                                             data-minlength="13" id="exampleFormControlInput1"
-                                            placeholder="62***********" value="{{ $dataPengguna->telepon }}">
+                                            placeholder="62***********" value="">
                                         @error('nomor')
                                         <div class="text-danger">* {{ $message }}</div>
                                         @enderror
