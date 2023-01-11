@@ -77,9 +77,9 @@
 
 @section('content')
 <article class="sign-up">
-    <h1>LOGIN ADMIN</h1>
-    <h1 class="sign-up__title">PPID DINAS KOMINFO<br>
-        KABUPATEN BANYUWANGI</h1>
+    <h3>LOGIN ADMIN</h3>
+    <h3>Dinas Komunikasi, Informatika dan<br>
+        Persandian Kabupaten Banyuwangi</h3><br></br>
     <form class="sign-up-form form" action="{{ route('login') }}" method="POST">
         @csrf
         <label class="form-label-wrapper">
@@ -90,11 +90,11 @@
             <p class="form-label">Password</p>
             <input class="form-input" type="password" name="password" placeholder="Masukkan Password" required>
         </label>
-        <a class="link-info forget-link" href="##">Lupa Password?</a>
+        {{-- <a class="link-info forget-link" href="##">Lupa Password?</a>
         <label class="form-checkbox-wrapper">
             <input class="form-checkbox" type="checkbox" required>
             <span class="form-checkbox-label">Ingatkan Saya</span>
-        </label>
+        </label> --}}
         <button class="form-btn primary-default-btn transparent-btn">LOGIN</button>
         <!-- Belum punya akun?
             {{--  <a class="link-info forget-link" href="{{ route('register') }}">REGISTER</a>  --}} -->

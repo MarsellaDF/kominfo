@@ -14,7 +14,8 @@ class SopController extends Controller
      */
     public function index()
     {
-        return view('sop');
+        $data['adminSop'] = AdminSop::where('status', true)->orderByDesc('id')->get();
+        return view('sop', $data);
     }
 
     /**

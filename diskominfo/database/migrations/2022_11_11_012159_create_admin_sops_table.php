@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('admin_sops', function (Blueprint $table) {
             $table->id();
-            $table->string('filename_admin_sops');
+            $table->string("title");
+            $table->string("image");
             $table->boolean("status");
             $table->timestamps();
         });

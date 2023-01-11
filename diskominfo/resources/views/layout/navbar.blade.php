@@ -74,6 +74,11 @@
                     {{ Request::segment(1) == 'prokeg'
                     || Request::segment(1) == 'realisasi'
                     || Request::segment(1) == 'anggaran'
+                    || Request::segment(1) == 'neraca'
+                    || Request::segment(1) == 'kas'
+                    || Request::segment(1) == 'keuangan'
+                    || Request::segment(1) == 'aset'
+                    || Request::segment(1) == 'dokdigital'
                         ? 'active'
                         : '' }}" data-bs-toggle="dropdown">Kinerja</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
@@ -88,7 +93,19 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
+                    <a href="#" class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'berita'
+                    || Request::segment(1) == 'rekrutmen'
+                    || Request::segment(1) == 'produkhukum'
+                    || Request::segment(1) == 'pengaduan'
+                    || Request::segment(1) == 'barangjasa'
+                    || Request::segment(1) == 'evakuasi'
+                    || Request::segment(1) == 'berkala'
+                    || Request::segment(1) == 'sesaat'
+                    || Request::segment(1) == 'kecuali'
+                    || Request::segment(1) == 'semerta'
+                        ? 'active'
+                        : '' }}" data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/berita" class="dropdown-item">Berita</a>
                         <a href="/rekrutmen" class="dropdown-item">Rekrutmen</a>
@@ -103,7 +120,20 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PPID</a>
+                    <a href="#" class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'ppid'
+                    || Request::segment(1) == 'maklumat'
+                    || Request::segment(1) == 'pedoman'
+                    || Request::segment(1) == 'dashum'
+                    || Request::segment(1) == 'sk'
+                    || Request::segment(1) == 'sop'
+                    // || Request::segment(1) == 'informasi'
+                    || Request::segment(1) == 'langsung'
+                    || Request::segment(1) == 'langsung#permohonan'
+                    || Request::segment(1) == '/langsung#keberatan'
+                    || Request::segment(1) == 'laporan'
+                        ? 'active'
+                        : '' }}" data-bs-toggle="dropdown">PPID</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/ppid" class="dropdown-item">Tentang PPID</a>
                         <a href="/maklumat" class="dropdown-item">Maklumat Pelayanan</a>
@@ -111,7 +141,7 @@
                         <a href="/dashum" class="dropdown-item">Dasar Hukum</a>
                         <a href="/sk" class="dropdown-item">SK Pembentukan</a>
                         <a href="/sop" class="dropdown-item">Standar Operasional Prosedur (SOP)</a>
-                        <a href="/informasi" class="dropdown-item">Permohonan Informasi Publik</a>
+                        {{-- <a href="/informasi" class="dropdown-item">Permohonan Informasi Publik</a> --}}
                         <a href="/langsung" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
                         <a href="/langsung#permohonan" class="dropdown-item">Alur Permohonan Informasi</a>
                         <a href="/langsung#keberatan" class="dropdown-item">Alur Pengajuan Keberatan</a>

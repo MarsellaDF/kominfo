@@ -9,12 +9,28 @@
             <div class="modal-body">
                 <div class="row g-2">
                     <div class="col mb-0">
-                        <label class="font-weight-bold">Judul Informasi</label>
-                        <input type="text" name="title" value="{{ $adminSesaat->title }}" class="form-control" placeholder="Inputkan Judul Informasi Setiap Saat"/>
+                        <label class="font-weight-bold">Ringkasan Informasi</label>
+                        <input type="text" name="ringkasan" value="{{ $adminSesaat->ringkasan }}" class="form-control" placeholder="Inputkan Ringkasan Informasi"/>
                     </div>
                     <div class="col mb-0">
-                        <label for="image" class="form-label">Jenis Media Yang Memuat Informasi</label>
-                        <input type="text" name="url" value="{{ $adminSesaat->url }}" class="form-control" placeholder="Inputkan Link Informasi Setiap Saat"/>
+                        <label class="font-weight-bold">Penguasa Informasi</label>
+                        <input type="text" name="penguasa" value="{{ $adminSesaat->penguasa }}" class="form-control" placeholder="Inputkan Penguasa Informasi"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label class="font-weight-bold">Penanggung Jawab</label>
+                        <input type="text" name="penanggungjawab" value="{{ $adminSesaat->penanggungjawab }}" class="form-control" placeholder="Inputkan Penanggung Jawab"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label class="font-weight-bold">Tempat dan Waktu</label>
+                        <input type="text" name="waktu" value="{{ $adminSesaat->waktu }}" class="form-control" placeholder="Inputkan Tempat dan Waktu"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label class="font-weight-bold">Retensi Arsip</label>
+                        <input type="text" name="arsip" value="{{ $adminSesaat->arsip }}" class="form-control" placeholder="Inputkan Retensi Arsip"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label for="image" class="form-label">Bentuk Informasi</label>
+                        <input type="text" name="link" value="{{ $adminSesaat->link }}" class="form-control" placeholder="Inputkan Bentuk Informasi"/>
                     </div>
                     <div class="col mb-0">
                         <div class="form-check mt-3">

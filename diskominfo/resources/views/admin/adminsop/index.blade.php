@@ -5,7 +5,8 @@
         <thead>
             <tr class="users-table-info">
                 <th>No</th>
-                <th>Image</th>
+                <th>Title</th>
+                <th>File</th>
                 <th>Status</th>
                 <th>Aksi</th>
             </tr>
@@ -14,11 +15,14 @@
             @forelse ($adminSop as $data)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
+
+                    <td>{{ $data->title }}</td>
                     <td>
-                        @if ($data['filename_adminsops'] != null || $data['filename_admin_sops'] != '')
-                            <img src="/upload/adminsop/{{ $data->filename_admin_sops }}" width="300">
+                        @if ($data['image'] != null || $data['image'] != '')
+                        <a href="/upload/adminsop/{{ $data->image }}" target="_blank" class="btn btn-outline-primary"> VIEW </a>
+                            {{-- <img src="/upload/adminsop/{{ $data->filename_admin_laporans }}"> --}}
                         @else
-                            <span style="color: red">Tidak ada gambar</span>
+                            <span style="color: red">Tidak ada file</span>
                         @endif
                     </td>
                     <td>
@@ -41,7 +45,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td class="text-center text-mute" colspan="4">Maaf!, Data tidak tersedia.</td>
+                    <td class="text-center text-mute" colspan="5">Maaf!, Data tidak tersedia.</td>
                 </tr>
             @endforelse
         </tbody>

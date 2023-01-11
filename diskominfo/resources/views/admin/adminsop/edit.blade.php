@@ -1,7 +1,7 @@
 @extends('admin.adminsop.layout')
 
 @section('content')
-    <h2>Form Edit AdminSop</h2>
+    <h2>Form Edit Standar Operasional Prosedur (SOP)</h2>
     <div class="container" style="padding: 24px; background-color:white">
         <form method="post" action="{{ route('adminsop-admin.update', $adminSop->id) }}" enctype="multipart/form-data">
             @csrf
@@ -9,7 +9,11 @@
             <div class="modal-body">
                 <div class="row g-2">
                     <div class="col mb-0">
-                        <label for="image" class="form-label">Image</label>
+                        <label class="font-weight-bold">Standar Operasional Prosedur (SOP)</label>
+                        <input type="text" name="title" value="{{ $adminSop->title }}" class="form-control" placeholder="Inputkan Standar Operasional Prosedur (SOP)"/>
+                    </div>
+                    <div class="col mb-0">
+                        <label for="image" class="form-label">File Standar Operasional Prosedur (SOP)</label>
                         <input type='file' name="image" id="imgInp" class="form-control" />
                     </div>
                     <div class="col mb-0">
@@ -20,17 +24,6 @@
                                 {{ isset($adminSop->status) && $adminSop->status == true ? 'checked' : '' }}>
                             <label class="form-check-label" for="defaultCheck1"> Status </label>
                         </div>
-                    </div>
-                </div>
-                <div class="row g-2" style="margin-top: 16px">
-                    <div class="col mb-0">
-                        @if (isset($adminSop->filename_admin_sops))
-                            <img width="200px" id="blah" src="{{ '/upload/adminsop/' . $adminSop->filename_adminsops }}"
-                                alt="your image" />
-                        @else
-                            <span style="color: red">Tidak ada gambar</span>
-                        @endif
-
                     </div>
                 </div>
             </div>

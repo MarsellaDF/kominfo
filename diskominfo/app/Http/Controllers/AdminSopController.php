@@ -38,7 +38,8 @@ class AdminSopController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
+            'title' => 'required',
+            'image' => 'mimes:doc,docx,xlsx,pptx,pdf|required'
         ]);
 
         $reqImage = $request->image;
@@ -49,7 +50,8 @@ class AdminSopController extends Controller
         }
 
         $dtadminSop = [
-            'filename_admin_sops' => $imageurl,
+            'title' => $request->title,
+            'image' => $imageurl,
             'status' => $request->status,
             'created_at' => now(),
         ];
@@ -104,7 +106,7 @@ class AdminSopController extends Controller
     public function update(Request $request, $id)
     {
         $adminSop = AdminSop::where('id',$id)->first();
-        $imageurl = $adminSop->filename_admin_sops;
+        $imageurl = $adminSop->image;
 
         if ($request->hasFile('image')) {
             $reqImage = $request->image;
@@ -112,14 +114,15 @@ class AdminSopController extends Controller
             $reqImage->move(public_path().'/upload/adminsop/', $name);
             $imageurl = $name;
 
-            $file = 'upload/adminsop/' . $adminSop->filename_admin_sops;
-            if ($adminSop->filename_admin_sops != '' && $adminSop->filename_admin_sops != null) {
+            $file = 'upload/adminsop/' . $adminSop->image;
+            if ($adminSop->image != '' && $adminSop->image != null) {
                 unlink($file);
             }
         }
 
         $changeAdminSop = [
-            'filename_admin_sops' => $imageurl,
+            'title' => $request->title,
+            'image' => $imageurl,
             'status' => $request->status,
             'updated_at' => now(),
         ];
@@ -162,8 +165,8 @@ class AdminSopController extends Controller
             ]);
         }
 
-        $file = 'upload/adminsop/' . $adminSop->filename_admin_sops;
-        if ($adminSop->filename_admin_sops != '' && $adminSop->filename_adminsops != null) {
+        $file = 'upload/adminsop/' . $adminSop->image;
+        if ($adminSop->image != '' && $adminSop->filename_adminsops != null) {
             unlink($file);
         }
 

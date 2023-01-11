@@ -9,16 +9,40 @@
                 <div class="row">
                     <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="font-weight-bold">Judul Informasi</label>
-                        <input type="text" name="title" class="form-control" placeholder="Inputkan Judul Informasi Setiap Saat"/>
+                        <label class="font-weight-bold">Ringkasan Informasi</label>
+                        <input type="text" name="ringkasan" class="form-control" placeholder="Inputkan Ringkasan Informasi"/>
                             </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label class="font-weight-bold">Jenis Media Yang Memuat Informasi</label>
-                            <input type="text" name="url" class="form-control" placeholder="Inputkan Link Informasi Setiap Saat"/>
+                            <label class="font-weight-bold">Penguasa Informasi</label>
+                            <input type="text" name="penguasa" class="form-control" placeholder="Inputkan Penguasa Informasi"/>
                                 </div>
                             </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Penanggung Jawab</label>
+                             <input type="text" name="penanggungjawab" class="form-control" placeholder="Inputkan Penanggung Jawab Informasi"/>
+                                </div>
+                          </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Tempat dan Waktu</label>
+                          <input type="text" name="waktu" class="form-control" placeholder="Inputkan Tempat dan Waktu"/>
+                                </div>
+                        </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Retensi Arsip</label>
+                       <input type="text" name="arsip" class="form-control" placeholder="Inputkan Retensi Arsip"/>
+                                </div>
+                        </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="font-weight-bold">Bentuk Informasi</label>
+                           <input type="text" name="link" class="form-control" placeholder="Inputkan Bentuk Informasi"/>
+                                </div>
+                        </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="image" class="form-label">Status Informasi Setiap Saat</label>

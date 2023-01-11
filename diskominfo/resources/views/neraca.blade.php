@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     .grid-container {
         display: grid;
         width: 60%;
@@ -13,7 +13,7 @@
         font-size: 30px;
         text-align: center;
     }
-</style>
+</style> --}}
 <!-- memanggil badan -> file layout.blade.php -->
 @extends('layout')
 
@@ -25,18 +25,22 @@
             <h3>Neraca</h3> <br>
 
             <center>
-                <div class="grid-container">
+                {{-- <div class="grid-container"> --}}
+                    <div class="card-group">
+                    <div class="card-body">
                     @foreach ($adminNeraca as $data)
-                    <div class="grid-item">
-                        <div class="owl-carousel-item position-relative">
+                    {{-- <div class="grid-item"> --}}
+                    <div class="owl-carousel-item position-relative">
                             <img class="img-fluid" style="object-fit: contain;"
                             src="/upload/adminneraca/{{ $data->filename_admin_neracas }}">
                         </div>
                     </div>
                     @endforeach
                 </div>
+            </div>
+        {{-- </div>
+        </div> --}}
             </center>
-
         </div>
     </div>
 @stop

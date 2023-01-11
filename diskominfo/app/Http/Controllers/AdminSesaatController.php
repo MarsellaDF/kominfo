@@ -38,13 +38,21 @@ class AdminSesaatController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'url' => 'required'
+            'ringkasan' => 'required',
+            'penguasa' => 'required',
+            'penanggungjawab' => 'required',
+            'waktu' => 'required',
+            'arsip' => 'required',
+            'link' => 'required'
         ]);
 
         $dtadminSesaat = [
-            'title' => $request->title,
-            'url' => $request->url,
+            'ringkasan' => $request->ringkasan,
+            'penguasa' => $request->penguasa,
+            'penanggungjawab' => $request->penanggungjawab,
+            'waktu' => $request->waktu,
+            'arsip' => $request->arsip,
+            'link' => $request->link,
             'status' => $request->status,
             'created_at' => now(),
         ];
@@ -101,8 +109,12 @@ class AdminSesaatController extends Controller
         $adminSesaat = AdminSesaat::where('id',$id)->first();
 
         $changeadminSesaat = [
-            'title' => $request->title,
-            'url' => $request->url,
+            'ringkasan' => $request->ringkasan,
+            'penguasa' => $request->penguasa,
+            'penanggungjawab' => $request->penanggungjawab,
+            'waktu' => $request->waktu,
+            'arsip' => $request->arsip,
+            'link' => $request->link,
             'status' => $request->status,
             'updated_at' => now(),
         ];

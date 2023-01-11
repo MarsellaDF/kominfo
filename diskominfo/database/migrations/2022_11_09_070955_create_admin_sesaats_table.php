@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('admin_sesaats', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->string("url");
+            $table->string("ringkasan");
+            $table->string("penguasa");
+            $table->string("penanggungjawab");
+            $table->string("waktu");
+            $table->string("arsip");
+            $table->string("link");
             $table->boolean("status");
             $table->timestamps();
         });

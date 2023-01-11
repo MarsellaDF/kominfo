@@ -38,6 +38,8 @@ Route::resource('kas',App\Http\Controllers\KasController::class);
 Route::resource('realisasi',App\Http\Controllers\RealisasiController::class);
 Route::resource('keuangan',App\Http\Controllers\KeuanganController::class);
 Route::resource('aset',App\Http\Controllers\AsetController::class);
+Route::resource('dokdigital',App\Http\Controllers\DokdigitalController::class);
+Route::resource('berita',App\Http\Controllers\BeritaController::class);
 Route::resource('anggaran',App\Http\Controllers\AnggaranController::class);
 Route::resource('neraca',App\Http\Controllers\NeracaController::class);
 Route::resource('rekrutmen',App\Http\Controllers\RekrutmenController::class);
@@ -78,6 +80,8 @@ Route::resource('adminprokeg-admin',App\Http\Controllers\AdminProkegController::
 Route::resource('adminrealisasi-admin',App\Http\Controllers\AdminRealisasiController::class);
 Route::resource('adminkeuangan-admin',App\Http\Controllers\AdminKeuanganController::class);
 Route::resource('adminaset-admin',App\Http\Controllers\AdminAsetController::class);
+Route::resource('admindokdigital-admin',App\Http\Controllers\AdminDokdigitalController::class);
+Route::resource('adminberita-admin',App\Http\Controllers\AdminBeritaController::class);
 Route::resource('adminrekrutmen-admin',App\Http\Controllers\AdminRekrutmenController::class);
 Route::resource('adminprodukhukum-admin',App\Http\Controllers\AdminProdukhukumController::class);
 Route::resource('adminpengaduan-admin',App\Http\Controllers\AdminPengaduanController::class);

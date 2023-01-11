@@ -2,8 +2,7 @@
 <footer class="footer">
     <div class="container footer--flex">
         <div class="footer-start">
-            <p>2021 © Elegant Dashboard - <a href="elegant-dashboard.com" target="_blank"
-                    rel="noopener noreferrer">elegant-dashboard.com</a></p>
+            <p>2023 ©Diskominfo.Banyuwangi</p>
         </div>
         <ul class="footer-end">
             <li><a href="##">About</a></li>

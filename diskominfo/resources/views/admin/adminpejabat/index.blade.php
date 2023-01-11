@@ -1,7 +1,7 @@
 @extends('admin.adminpejabat.layout')
 
 @section('content')
-    <table class="table table-striped table-bordered table-hover" id="table">
+    <table class="table table-striped table-bordered table-hover" style="overflow-y: scroll; overflow-x: hidden; height: 100px; width: 50%" id="table">
         <thead>
             <tr class="users-table-info">
                 <th>No</th>
@@ -18,7 +18,7 @@
                     <th>Aksi</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="overflow-y: scroll; overflow-x: hidden; height: 100px; width: 70%">
             @forelse ($adminPejabat as $data)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>

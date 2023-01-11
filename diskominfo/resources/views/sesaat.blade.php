@@ -16,7 +16,6 @@
                     <th>Penanggung Jawab</th>
                     <th>Tempat dan Waktu</th>
                     <th>Retensi Arsip</th>
-                    <th>Bentuk Informasi</th>
                 </tr>
             </thead>
         <tbody>
@@ -24,14 +23,18 @@
     </div>
     <tr>
     <td scope="row">{{ $loop->iteration }}</td>
-        <td>{{ $data->title }}</td>
-            <td>
+        <td>{{ $data->ringkasan }}</td>
+        <td>{{ $data->penguasa }}</td>
+        <td>{{ $data->penanggungjawab }}</td>
+        <td>{{ $data->waktu }}</td>
+        <td>{{ $data->arsip }}</td>
+            {{-- <td>
                 @if ($data['url'] != null || $data['url'] != '')
                 <a href={{ $data->url }} target="_blank" class="btn btn-link">Lihat Disini</a>
                 @else
                     <span style="color: red">Tidak ada URL</span>
                 @endif
-                    </td>
+                    </td> --}}
                 </tr>
             @endforeach
         </tbody>

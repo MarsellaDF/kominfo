@@ -25,7 +25,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="/assets/template/img/logo.png" rel="icon">
+    <link href="/assets/template/img/logo.png" style="object-fit: contain;" rel="icon">
 </head>
 
 <body>
