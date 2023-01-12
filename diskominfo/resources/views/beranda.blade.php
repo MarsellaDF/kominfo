@@ -45,27 +45,29 @@
                         <a class="nav-link" href="/berita">Selengkapnya >>></a>
                     </li>
                 </ul>
-                <div class="card-group">
-                    @if (!$adminBerita->isEmpty())
-                        @foreach ($adminBerita as $data)
-                            <div class="card">
-                                <img class="card-img-top" src="/upload/adminBerita/{{ $data->image }}"
-                                style="height: 200px; background-size: cover; background-repeat: no-repeat;"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <a href="/user/detail/berita/{{ $data->id }}">
-                                        <h5 class="card-title">{{ $data->judul }}</h5>
-                                    </a>
-                                    <p class="card-text">{!! strip_tags(Str::limit($data->deskripsi, 100, $end = ' ...')) !!}.</p>
-                                    <a href="/user/detail/berita/{{ $data->id }}" class="btn btn-primary">Lihat
-                                        Berita</a>
+                <center>
+                    <div class="card-group" style="width: 1000px">
+                        @if (!$adminBerita->isEmpty())
+                            @foreach ($adminBerita as $data)
+                                <div class="card">
+                                    <img class="card-img-top" src="/upload/adminBerita/{{ $data->image }}"
+                                    style="height: 200px; background-size: cover; background-repeat: no-repeat;"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <a href="/user/detail/berita/{{ $data->id }}">
+                                            <h5 class="card-title">{{ $data->judul }}</h5>
+                                        </a>
+                                        <p class="card-text">{!! strip_tags(Str::limit($data->deskripsi, 100, $end = ' ...')) !!}.</p>
+                                        <a href="/user/detail/berita/{{ $data->id }}" class="btn btn-primary">Lihat
+                                            Berita</a>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted"> {{ $data->created_at->format('d F Y') }}</small>
+                                    </div>
                                 </div>
-                                <div class="card-footer">
-                                    <small class="text-muted"> {{ $data->created_at->format('d - F - Y', "id") }}</small>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </center>
             </div>
         @stop

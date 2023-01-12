@@ -23,7 +23,7 @@
                     <td>{{ $data->ringkasan }}</td>
                     <td>{{ $data->penguasa }}</td>
                     <td>{{ $data->penanggungjawab }}</td>
-                    <td>{{ $data->waktu }}</td>
+                    <td> Banyuwangi, {{ $data->created_at->format('d F Y') }}</td>
                     <td>{{ $data->arsip }}</td>
                     <td>
                         @if ($data['link'] != null || $data['link'] != '')
