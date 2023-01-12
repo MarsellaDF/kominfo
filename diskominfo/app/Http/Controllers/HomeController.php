@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminBerita;
 use App\Models\Banner;
 use App\Models\TujuanSasaran;
 use App\Models\Kedudukan;
@@ -25,6 +26,7 @@ class HomeController extends Controller
         $data['banners'] = Banner::where('status', true)->orderByDesc('id')->get();
         $data['tujuanSasaran'] =  TujuanSasaran::where("title", "Tujuan Sasaran")->first();
         $data['kedudukan'] =  Kedudukan::where("title", "Kedudukan")->first();
+        $data['adminBerita'] = AdminBerita::where('status', true)->orderByDesc('id')->paginate(4);
         return view('beranda', $data);
     }
 }

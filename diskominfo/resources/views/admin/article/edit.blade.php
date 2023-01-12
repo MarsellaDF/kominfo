@@ -1,4 +1,4 @@
-@extends('admin.adminberita.layout')
+@extends('admin.article.layout')
 
 @section('content')
 
@@ -33,7 +33,7 @@
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form action="{{ route('article.update', $articles->id) }}" method="POST"
+                    <form action="{{ route('adminberita-admin.update', $articles->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -42,29 +42,15 @@
                             <div class="row g-2">
                                 <div class="col mb-0">
                                     <label for="nameExLarge" class="form-label">Judul Artikel</label>
-                                    <input type="text" id="nameExLarge" class="form-control" name="title"
+                                    <input type="text" id="nameExLarge" class="form-control" name="judul"
                                         placeholder="Masukkan Judul Artikel"
-                                        value="{{ isset($articles->title) ? $articles->title : '' }}" />
-                                </div>
-                                <div class="col mb-0">
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlSelect1" class="form-label">Kategori</label>
-                                        <select class="form-select" id="exampleFormControlSelect1" name="category" required
-                                            aria-label="Default select example">
-                                            <option disabled>Pilih Katgeori</option>
-                                            @foreach ($category as $data_category)
-                                                <option value="{{ $data_category->id }}"
-                                                    {{ $articles->id_category == $data_category->id ? 'selected' : '' }}>
-                                                    {{ $data_category->name_category }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                                        value="{{ isset($articles->judul) ? $articles->judul : '' }}" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="deskripsi" class="form-label">Deskripsi Fasilitas</label>
-                                    <textarea id="konten" name="description" rows="10" class="form-control" cols="50">{{ isset($articles->description) ? $articles->description : '' }}
+                                    <textarea id="konten" name="deskripsi" rows="10" class="form-control" cols="50">{{ isset($articles->deskripsi) ? $articles->deskripsi : '' }}
                                     </textarea>
                                 </div>
                             </div>
@@ -86,7 +72,7 @@
                                 <div class="col mb-0">
                                     @if (isset($articles->image))
                                         <img width="200px" id="blah"
-                                            src="{{ '/upload/articles/' . $articles->image }}" alt="your image" />
+                                            src="{{ '/upload/adminberita/' . $articles->image }}" alt="your image" />
                                     @else
                                         <span style="color: red">Tidak ada gambar</span>
                                     @endif

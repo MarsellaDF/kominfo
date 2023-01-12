@@ -8,7 +8,7 @@
             </h4>
         </div>
         <div class="col text-right">
-            <a href="{{ URL::to('/articles-admin/create') }}">++ Tambah Data</a>
+            <a href="{{ URL::to('/adminberita-admin/create') }}">++ Tambah Data</a>
         </div>
     </div>
     <div class="row">

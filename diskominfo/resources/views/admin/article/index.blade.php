@@ -1,4 +1,4 @@
-@extends('admin.adminberita.layout')
+@extends('admin.article.layout')
 
 @section('content')
     <table class="table table-striped table-bordered table-hover" id="table">
@@ -13,14 +13,14 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($articles as $data)
+            @forelse ($adminBerita as $data)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>{{ $data->judul }}</td>
                     <td>{!! Str::limit($data->deskripsi  , 100, $end=" ...")!!}</td>
                     <td>
                         @if ($data->image != null || $data->image != '')
-                            <img src="/upload/articles/{{ $data->image }}" width="100">
+                            <img src="/upload/adminberita/{{ $data->image }}" width="100">
                         @else
                             <span style="color: red">Tidak ada gambar</span>
                         @endif

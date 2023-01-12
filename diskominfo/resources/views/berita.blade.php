@@ -20,12 +20,13 @@
             <div class="row">
                 <div class="col-md-9 col-sm-12 col-xs-12">
                     <div class="left-side">
-                        @if (!$articles->isEmpty())
-                            @foreach ($articles as $data)
+                        @if (!$adminBerita->isEmpty())
+                            @foreach ($adminBerita as $data)
                                 <div class="item-holder">
                                     <div class="image-box">
                                         <figure>
-                                            <a href="/user/detail/berita/{{ $data->id }}"><img src="/upload/adminBerita/{{ $data->image }}"
+                                            <a href="/user/detail/berita/{{ $data->id }}">
+                                                <img src="/upload/adminBerita/{{ $data->image }}" style="width: 600px"
                                                     alt=""></a>
                                         </figure>
                                     </div>
@@ -74,7 +75,7 @@
             </div>
             <div class="styled-pagination">
                 <!-- End Contact Section -->
-                {{ $adminBerita->links() }}
+                {{--  {{ $adminBerita->links() }}  --}}
                 <center style="margin-bottom: 24px">
                 </center>
             </div>
