@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('admin_beritas', function (Blueprint $table) {
             $table->id();
-            $table->string('judul', 30);
+            $table->string('judul');
             $table->text('deskripsi');
             $table->string('image');
             $table->boolean('status');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\AdminBerita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,10 +17,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $data['articles'] =  DB::table('articles')->select('articles.*')
-                                                            ->join('category_articles as ca', 'ca.id', 'articles.id_category')
-                                                            ->orderByDesc('id')
-                                                            ->get();
+        $data['article'] =  DB::table('articles')->orderByDesc('id')
+                                                 ->get();
         return view('article.index', $data);
     }
 
@@ -42,9 +41,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'title' => 'required',
-            'category' => 'required',
-            'description' => 'required',
+            'judul' => 'required',
+            'deskripsi' => 'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
         ]);
 
@@ -58,9 +56,8 @@ class ArticleController extends Controller
         }
 
         $dtarticles = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'id_category' => $request->category,
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
             'image' => $imageurl,
             'created_by' => $penulis,
             'status' => $request->status,
@@ -92,7 +89,12 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['data'] =  AdminBerita::where('id', $id)
+            ->first();
+        // $data["data"]->created_at = $data["data"]->created_at
+        // return $data;
+
+        return view('detail-berita', $data);
     }
 
     /**
@@ -104,8 +106,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $data['articles'] =  DB::table('articles')->where('id', $id)->first();
-        $data['category'] =  DB::table('category_articles')->where('status', true)->get();
-        return view('Backend/article.edit', $data);
+        return view('article.edit', $data);
     }
 
     /**
@@ -134,9 +135,8 @@ class ArticleController extends Controller
         }
 
         $dtarticles = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'id_category' => $request->category,
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
             'image' => $imageurl,
             'created_by' => $penulis,
             'status' => $request->status,

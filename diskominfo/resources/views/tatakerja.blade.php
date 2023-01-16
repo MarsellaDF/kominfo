@@ -4,14 +4,17 @@
 <!-- mengisi badan content dengan isi di bawah section-->
 @section('content')
 
-<div class="container-xxl py-5">
-    <div class="text-center mx-auto mb-5">
-        @foreach ($adminTatakerja as $data)
-            <td>
-                <img class="img-fluid rounded w-500 align-self-end"
-                src="/upload/admintatakerja/{{ $data->image }}">
-            </td>
+    <div class="container-xxl py-5">
+        <center>
+            <h2>Organisasi dan Tata Kerja</h2>
+        </center><br><br>
+        <div class="text-center mx-auto mb-5">
+            @foreach ($adminTatakerja as $data)
+                <td>
+                    <iframe class="" width="100%" height="800px" src="/upload/admintatakerja/{{ $data->image }}"
+                        frameborder="0"></iframe>
+                </td>
             @endforeach
+        </div>
     </div>
-</div>
 @stop

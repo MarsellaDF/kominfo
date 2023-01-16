@@ -1,8 +1,10 @@
 @extends('admin.layout')
 
 @section('content-admin')
-    <div class="container">
+    <img src="/assets/template/img/start4.jpg" style="object-fit: contain;" width="100%" height="100%">
+    {{-- <div class="container">
         <h2 class="main-title">Dashboard</h2>
+    </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="users-table table-wrapper" style="padding: 16px; background-color:white">
@@ -280,5 +282,5 @@
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+    </div> --}}
+@stop

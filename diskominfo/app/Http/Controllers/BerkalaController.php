@@ -14,6 +14,15 @@ class BerkalaController extends Controller
      */
     public function index()
     {
+        // $adminBerkala = AdminBerkala::whereYear('created_at',)
+        //         ->get();
+        // dd($adminBerkala);
+        // $data['adminBerkala'] = AdminBerkala::whereYear('created_at')->get();
+        // return view('berkala', $data);
+        // $adminBerkala = AdminBerkala::table('admin_berkalas')
+        //  ->whereYear('created_at', '2021')
+        //  ->get();
+
         $data['adminBerkala'] = AdminBerkala::where('status', true)->orderByDesc('id')->get();
         return view('berkala', $data);
     }

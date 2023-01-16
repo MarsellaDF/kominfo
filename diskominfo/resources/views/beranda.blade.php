@@ -30,44 +30,47 @@
                 {!! $tujuanSasaran->content !!}
             </div>
         @endif
+    </div>
 
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-            @if ($kedudukan->content != null)
-                <h1>Kedudukan, Tugas, Dan Fungsi</h1>
-                <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
-                    {!! $kedudukan->content !!}
-                </div>
-            @endif
-
-            <div class="container">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/berita">Selengkapnya >>></a>
-                    </li>
-                </ul>
-                <center>
-                    <div class="card-group" style="width: 1000px">
-                        @if (!$adminBerita->isEmpty())
-                            @foreach ($adminBerita as $data)
-                                <div class="card">
-                                    <img class="card-img-top" src="/upload/adminBerita/{{ $data->image }}"
-                                    style="height: 200px; background-size: cover; background-repeat: no-repeat;"
-                                        alt="Card image cap">
-                                    <div class="card-body">
-                                        <a href="/user/detail/berita/{{ $data->id }}">
-                                            <h5 class="card-title">{{ $data->judul }}</h5>
-                                        </a>
-                                        <p class="card-text">{!! strip_tags(Str::limit($data->deskripsi, 100, $end = ' ...')) !!}.</p>
-                                        <a href="/user/detail/berita/{{ $data->id }}" class="btn btn-primary">Lihat
-                                            Berita</a>
-                                    </div>
-                                    <div class="card-footer">
-                                        <small class="text-muted"> {{ $data->created_at->format('d F Y') }}</small>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
-                    </div>
-                </center>
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        @if ($kedudukan->content != null)
+            <h1>Kedudukan, Tugas, Dan Fungsi</h1>
+            <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
+                {!! $kedudukan->content !!}
             </div>
-        @stop
+        @endif
+    </div>
+
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <h2>Berita</h2>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/berita">Selengkapnya >>></a>
+                </li>
+            </ul>
+            <center>
+                <div class="card-group" style="width: 1000px">
+                    @if (!$adminBerita->isEmpty())
+                        @foreach ($adminBerita as $data)
+                            <div class="card">
+                                <img class="card-img-top" src="/upload/adminBerita/{{ $data->image }}"
+                                    style="height: 200px; background-size: cover; background-repeat: no-repeat;"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $data->judul }}</h5>
+                                    {{-- <p class="card-text">{!! strip_tags(Str::limit($data->deskripsi, 100, $end = ' ...')) !!}.</p> --}}
+                                    <a href="/detail-berita/{{ $data->id }}" class="btn btn-primary">Lihat
+                                        Berita</a>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted"> {{ $data->created_at->format('d F Y') }}</small>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </center>
+        </div>
+    </div>
+@stop

@@ -25,12 +25,12 @@
                              <input type="text" name="penanggungjawab" class="form-control" placeholder="Inputkan Penanggung Jawab Informasi"/>
                                 </div>
                           </div>
-                    <div class="col-lg-6">
+                    {{-- <div class="col-lg-6">
                         <div class="form-group">
                             <label class="font-weight-bold">Tempat dan Waktu</label>
                           <input type="text" name="waktu" class="form-control" placeholder="Inputkan Tempat dan Waktu"/>
                                 </div>
-                        </div>
+                        </div> --}}
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="font-weight-bold">Retensi Arsip</label>

@@ -3,7 +3,7 @@
 @section('content')
 
     <!--Page Title-->
-    <section class="page-title text-center" style="background-image:url(/frontend/images/background/3.jpg); color: rgb(218, 167, 2) !important">
+    {{-- <section class="page-title text-center" style="background-image:url(/frontend/images/background/3.jpg); color: rgb(218, 167, 2) !important">
         <div class="container">
             <div class="title-text">
                 <h1>Detail Berita</h1>
@@ -15,7 +15,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--End Page Title-->
 
     <!-- Contact Section -->
@@ -27,20 +27,28 @@
                         <div class="item-holder">
                             <div class="image-box">
                                 <figure>
-                                    <a href="single-blog.html"><img src="/upload/articles/{{ $articles->image }}" alt=""></a>
+                                    <img src="/upload/adminBerita/{{ $data->image }}" style="width: 500px"></a>
                                 </figure>
                             </div>
+                        {{-- @if (!$adminBerita->isEmpty())
+                            @foreach ($adminBerita as $data)
+                                <div class="item-holder">
+                                    <div class="image-box">
+                                        <figure>
+                                        <img src="/upload/adminBerita/{{ $data->image }}" style="width: 600px"  alt="">
+                                        </figure>
+                                    </div> --}}
                             <div class="content-text">
-                                <a href="single-blog.html">
-                                    <h5>{{ $articles->judul }}</h5>
-                                </a>
-                                <span>By Admin / {{ $articles->created_at->format('d - m - Y') }}</span>
-                                <p>{!! $articles->deskripsi !!}</p>
+                                <h6>{{ $data->judul }}</h6>
+                                {{-- <span>By Admin / {{ Carbon\Carbon::parse($$data->created_at)->format('Y-m-d') }}</span> --}}
+                            <span>By Admin / {{ $data->created_at->format('d - m - Y') }}</span>
+
+                            <p>{!! $data->deskripsi !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                {{-- <div class="col-md-3 col-sm-12 col-xs-12">
                     <div class="right-side">
                         <div class="text-title">
                             <h6>Search</h6>
@@ -51,7 +59,7 @@
                                     value="{{ isset($_GET['cari']) ? $_GET['cari'] : '' }}" placeholder="Enter to Search"
                                     required="">
                             </form>
-                        </div>
+                        </div> --}}
                         {{-- <div class="categorise-menu">
                             <div class="text-title">
                                 <h6>Categories</h6>

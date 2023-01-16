@@ -20,10 +20,10 @@
                         <label class="font-weight-bold">Penanggung Jawab</label>
                         <input type="text" name="penanggungjawab" value="{{ $adminSesaat->penanggungjawab }}" class="form-control" placeholder="Inputkan Penanggung Jawab"/>
                     </div>
-                    <div class="col mb-0">
+                    {{-- <div class="col mb-0">
                         <label class="font-weight-bold">Tempat dan Waktu</label>
                         <input type="text" name="waktu" value="{{ $adminSesaat->waktu }}" class="form-control" placeholder="Inputkan Tempat dan Waktu"/>
-                    </div>
+                    </div> --}}
                     <div class="col mb-0">
                         <label class="font-weight-bold">Retensi Arsip</label>
                         <input type="text" name="arsip" value="{{ $adminSesaat->arsip }}" class="form-control" placeholder="Inputkan Retensi Arsip"/>

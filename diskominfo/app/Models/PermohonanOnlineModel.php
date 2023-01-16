@@ -20,5 +20,6 @@ class PermohonanOnlineModel extends Model
     'alasan_tujuan',
     'cara',
     'ktp',
+    'no_register',
     ];
 }

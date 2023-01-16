@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 //tambahkan
 use App\Models\PermohonanOnlineModel;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Integer;
 
 class PermohonanOnlineController extends Controller
 {
@@ -28,12 +30,15 @@ class PermohonanOnlineController extends Controller
      */
     public function store(Request $request)
     {
+
+        $randomNumber = random_int(100000, 999999);
+
         //melakukan validasi
         $rules = [
             'nik' => 'required|numeric',
             'name' => 'required',
             'address' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'jobs' => 'required',
             'telepon' => 'required|numeric',
             'informasi' => 'required',
@@ -82,6 +87,7 @@ class PermohonanOnlineController extends Controller
             'alasan_tujuan' => $request->input('alasan_tujuan'),
             'cara' => $request->input('cara'),
             'ktp' => $imageurl,
+            'no_register' => $randomNumber,
         ];
 
         PermohonanOnlineModel::create($body);

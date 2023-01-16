@@ -18,6 +18,10 @@
                             <label for="image" class="form-label" style="margin-left: 16px; margin-bottom: 16px">Image</label>
                             <input type='file' name="image" id="imgInp" class="form-control" />
                         </div>
+                        <div class="col-lg-12">
+                            <label class="font-weight-bold">Deskripsi Berita</label>
+                            <textarea id="konten" name="deskripsi" rows="4" class="form-control" cols="50"></textarea>
+                            </div>
                         <div class="col-lg-6">
                             <label for="status" class="form-label">Status</label>
                             <div class="form-check mt-3">
@@ -26,10 +30,6 @@
                                 <label class="form-check-label" for="defaultCheck1"> Status </label>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                    <label class="font-weight-bold">Deskripsi Berita</label>
-                    <textarea id="konten" name="deskripsi" rows="4" class="form-control" cols="50"></textarea>
                     </div>
                     <div class="row g-2" style="margin-top: 16px">
                         <div class="col mb-0">

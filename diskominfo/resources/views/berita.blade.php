@@ -1,6 +1,10 @@
 @extends('layout')
 
 @section('content')
+
+<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <h1>Berita</h1>
+</div>
     <div class="hero-slider">
         @if (!$adminBerita->isEmpty())
             @foreach ($adminBerita as $no => $data)
@@ -25,21 +29,17 @@
                                 <div class="item-holder">
                                     <div class="image-box">
                                         <figure>
-                                            <a href="/user/detail/berita/{{ $data->id }}">
-                                                <img src="/upload/adminBerita/{{ $data->image }}" style="width: 600px"
-                                                    alt=""></a>
+                                        <img src="/upload/adminBerita/{{ $data->image }}" style="width: 600px"  alt="">
                                         </figure>
                                     </div>
                                     <div class="content-text">
-                                        <a href="/user/detail/berita/{{ $data->id }}">
                                             <h6>{{ $data->judul }}</h6>
-                                        </a>
                                         <span>By Admin / {{ $data->created_at->format('d - m - Y') }}</span>
-                                        <p>
+                                        {{-- <p>
                                             {!! strip_tags(Str::limit($data->deskripsi, 300, $end = ' ...')) !!}
-                                        </p>
-                                        <div class="link-btn">
-                                            <a href="/user/detail/berita/{{ $data->id }}" class="btn-style-one">Baca Selengkapnya</a>
+                                        </p> --}}
+                                        <div class="mb-3">
+                                           <a href="/detail-berita/{{ $data->id }}"  class="btn btn-outline-primary py-md-3 px-md-2 animated slideInRight">Baca Berita >>></a> <br></br>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                {{-- <div class="col-md-3 col-sm-12 col-xs-12">
                     <div class="right-side">
                         <div class="text-title">
                             <h6>Search</h6>
@@ -58,7 +58,7 @@
                                     value="{{ isset($_GET['cari']) ? $_GET['cari'] : '' }}" placeholder="Enter to Search"
                                     required="">
                             </form>
-                        </div>
+                        </div> --}}
                         {{-- <div class="categorise-menu">
                             <div class="text-title">
                                 <h6>Categories</h6>

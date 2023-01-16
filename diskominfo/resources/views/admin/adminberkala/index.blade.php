@@ -1,6 +1,15 @@
 @extends('admin.adminberkala.layout')
 
 @section('content')
+{{-- <div class="card-body">
+    <form action="{{ route('adminberkala.index') }}" method="GET">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">Tahun </label>
+                    <input type="text" data-provide="tahun" name="tahun" value="{{ request('tahun') }}" class="form-control tahun @error('bulan') is-invalid @enderror" id="exampleInputUsername1" placeholder="Masukkan Tahun">
+                </div>
+            </div> --}}
     <table class="table table-striped table-bordered table-hover" id="table">
         <thead>
             <tr class="users-table-info">

@@ -50,7 +50,7 @@ class AdminSesaatController extends Controller
             'penguasa' => $request->penguasa,
             'penanggungjawab' => $request->penanggungjawab,
             'arsip' => $request->arsip,
-            'url' => $request->link,
+            'link' => $request->link,
             'status' => $request->status,
             'created_at' => now(),
         ];
@@ -110,7 +110,7 @@ class AdminSesaatController extends Controller
             'ringkasan' => $request->ringkasan,
             'penguasa' => $request->penguasa,
             'penanggungjawab' => $request->penanggungjawab,
-            'waktu' => $request->waktu,
+            // 'waktu' => $request->waktu,
             'arsip' => $request->arsip,
             'link' => $request->link,
             'status' => $request->status,

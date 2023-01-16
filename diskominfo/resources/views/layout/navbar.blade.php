@@ -141,7 +141,7 @@
                         <a href="/dashum" class="dropdown-item">Dasar Hukum</a>
                         <a href="/sk" class="dropdown-item">SK Pembentukan</a>
                         <a href="/sop" class="dropdown-item">Standar Operasional Prosedur (SOP)</a>
-                        {{-- <a href="/informasi" class="dropdown-item">Permohonan Informasi Publik</a> --}}
+                        <a href="/pengajuankeberatan" class="dropdown-item">Pengajuan Keberatan</a>
                         <a href="/langsung" class="dropdown-item">Permohonan Informasi Datang Langsung</a>
                         <a href="/langsung#permohonan" class="dropdown-item">Alur Permohonan Informasi</a>
                         <a href="/langsung#keberatan" class="dropdown-item">Alur Pengajuan Keberatan</a>
