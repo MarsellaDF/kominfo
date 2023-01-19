@@ -153,7 +153,7 @@ class AdminMaklumatController extends Controller
     {
         $adminMaklumat = AdminMaklumat::where('id',$id)->first();
 
-        if (empty($adminMaklumak)) {
+        if (empty($adminMaklumat)) {
             return redirect()
             ->back()
             ->withInput()

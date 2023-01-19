@@ -86,7 +86,7 @@
                     Request::segment(1) == 'adminkas-admin' ||
                     Request::segment(1) == 'adminkeuangan-admin' ||
                     Request::segment(1) == 'adminaset-admin' ||
-                    Request::segment(1) == 'admindigital-admin'
+                    Request::segment(1) == 'admindokdigital-admin'
                         ? 'active'
                         : '' }}"
                         href="##">
@@ -119,7 +119,7 @@
                             <a href="/adminaset-admin">Aset</a>
                         </li>
                         <li>
-                            <a href="/admindigital-admin">Dokumen Digital</a>
+                            <a href="/admindokdigital-admin">Dokumen Digital</a>
                         </li>
                     </ul>
                 </li>

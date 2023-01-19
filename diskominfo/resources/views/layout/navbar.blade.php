@@ -55,14 +55,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4 p-lg-0">
-                <a href="/" class="nav-item nav-link {{ Request::segment(1) != '' ? '' : 'active' }}" >Beranda</a>
+                <a href="/" class="nav-item nav-link {{ Request::segment(1) != '' ? '' : 'active' }}">Beranda</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle
-                    {{ Request::segment(1) == 'tentang'
-                    || Request::segment(1) == 'pejabat'
-                    || Request::segment(1) == 'tatakerja'
+                    <a href="#"
+                        class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'tentang' || Request::segment(1) == 'pejabat' || Request::segment(1) == 'tatakerja'
                         ? 'active'
-                        : '' }}" data-bs-toggle="dropdown">Profil</a>
+                        : '' }}"
+                        data-bs-toggle="dropdown">Profil</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/tentang" class="dropdown-item ">Tentang</a>
                         <a href="/pejabat" class="dropdown-item">Pejabat Struktural</a>
@@ -70,17 +70,19 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle
-                    {{ Request::segment(1) == 'prokeg'
-                    || Request::segment(1) == 'realisasi'
-                    || Request::segment(1) == 'anggaran'
-                    || Request::segment(1) == 'neraca'
-                    || Request::segment(1) == 'kas'
-                    || Request::segment(1) == 'keuangan'
-                    || Request::segment(1) == 'aset'
-                    || Request::segment(1) == 'dokdigital'
+                    <a href="#"
+                        class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'prokeg' ||
+                    Request::segment(1) == 'realisasi' ||
+                    Request::segment(1) == 'anggaran' ||
+                    Request::segment(1) == 'neraca' ||
+                    Request::segment(1) == 'kas' ||
+                    Request::segment(1) == 'keuangan' ||
+                    Request::segment(1) == 'aset' ||
+                    Request::segment(1) == 'dokdigital'
                         ? 'active'
-                        : '' }}" data-bs-toggle="dropdown">Kinerja</a>
+                        : '' }}"
+                        data-bs-toggle="dropdown">Kinerja</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/prokeg" class="dropdown-item">Program & Kegiatan</a>
                         <a href="/realisasi" class="dropdown-item">Realisasi Kegiatan</a>
@@ -93,19 +95,21 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle
-                    {{ Request::segment(1) == 'berita'
-                    || Request::segment(1) == 'rekrutmen'
-                    || Request::segment(1) == 'produkhukum'
-                    || Request::segment(1) == 'pengaduan'
-                    || Request::segment(1) == 'barangjasa'
-                    || Request::segment(1) == 'evakuasi'
-                    || Request::segment(1) == 'berkala'
-                    || Request::segment(1) == 'sesaat'
-                    || Request::segment(1) == 'kecuali'
-                    || Request::segment(1) == 'semerta'
+                    <a href="#"
+                        class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'berita' ||
+                    Request::segment(1) == 'rekrutmen' ||
+                    Request::segment(1) == 'produkhukum' ||
+                    Request::segment(1) == 'pengaduan' ||
+                    Request::segment(1) == 'barangjasa' ||
+                    Request::segment(1) == 'evakuasi' ||
+                    Request::segment(1) == 'berkala' ||
+                    Request::segment(1) == 'sesaat' ||
+                    Request::segment(1) == 'kecuali' ||
+                    Request::segment(1) == 'semerta'
                         ? 'active'
-                        : '' }}" data-bs-toggle="dropdown">Informasi</a>
+                        : '' }}"
+                        data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/berita" class="dropdown-item">Berita</a>
                         <a href="/rekrutmen" class="dropdown-item">Rekrutmen</a>
@@ -120,20 +124,22 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle
-                    {{ Request::segment(1) == 'ppid'
-                    || Request::segment(1) == 'maklumat'
-                    || Request::segment(1) == 'pedoman'
-                    || Request::segment(1) == 'dashum'
-                    || Request::segment(1) == 'sk'
-                    || Request::segment(1) == 'sop'
-                    // || Request::segment(1) == 'informasi'
-                    || Request::segment(1) == 'langsung'
-                    || Request::segment(1) == 'langsung#permohonan'
-                    || Request::segment(1) == '/langsung#keberatan'
-                    || Request::segment(1) == 'laporan'
+                    <a href="#"
+                        class="nav-link dropdown-toggle
+                    {{ Request::segment(1) == 'ppid' ||
+                    Request::segment(1) == 'maklumat' ||
+                    Request::segment(1) == 'pedoman' ||
+                    Request::segment(1) == 'dashum' ||
+                    Request::segment(1) == 'sk' ||
+                    Request::segment(1) == 'sop' ||
+                    Request::segment(1) == 'pengajuankeberatan' ||
+                    Request::segment(1) == 'langsung' ||
+                    Request::segment(1) == 'langsung#permohonan' ||
+                    Request::segment(1) == '/langsung#keberatan' ||
+                    Request::segment(1) == 'laporan'
                         ? 'active'
-                        : '' }}" data-bs-toggle="dropdown">PPID</a>
+                        : '' }}"
+                        data-bs-toggle="dropdown">PPID</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="/ppid" class="dropdown-item">Tentang PPID</a>
                         <a href="/maklumat" class="dropdown-item">Maklumat Pelayanan</a>

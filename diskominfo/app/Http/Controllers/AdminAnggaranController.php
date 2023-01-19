@@ -162,7 +162,7 @@ class AdminAnggaranController extends Controller
             ]);
         }
 
-        $file = 'upload/adminanggaran/' . $admin_anggarans->filename_kadmin_anggarans;
+        $file = 'upload/adminanggaran/' . $admin_anggarans->filename_admin_anggarans;
         if ($admin_anggarans->filename_admin_anggarans != '' && $admin_anggarans->filename_admin_anggarans != null) {
             unlink($file);
         }
